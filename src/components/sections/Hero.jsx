@@ -4,6 +4,8 @@ import WaveBackground from '../WaveBackground'
 import CountdownTimer from '../CountdownTimer'
 import Button from '../ui/Button'
 
+const EMAIL = 'symposium_ait@adithyatech.com'
+
 export default function Hero() {
   return (
     <section
@@ -62,10 +64,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <Button variant="primary" as="a" href="#contact">
+          <Button variant="primary" as="a" href="https://docs.google.com/forms/d/e/1FAIpQLSe1PSllKpTmE-z_ojwcDtMaHyjMstHON7o8e0XcakZF7EAhPw/viewform?pli=1">
             Register Now
           </Button>
-          <Button variant="secondary" as="a" href="#timeline">
+          <Button variant="secondary" as="a" href={`mailto:${EMAIL}`}>
             Submit Paper
           </Button>
         </motion.div>

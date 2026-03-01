@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion'
 import { HiHeart } from 'react-icons/hi'
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import {FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
 const SOCIAL = [
-  { icon: FaFacebookF, label: 'Facebook', href: '#' },
   { icon: FaInstagram, label: 'Instagram', href: 'https://www.instagram.com/adithya_institute_technology/' },
   { icon: FaLinkedinIn, label: 'LinkedIn', href: 'https://www.linkedin.com/school/adithya-institute-of-technology/' },
 ]
