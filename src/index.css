@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme: light mode (default when .light or no class) */
+:root,
+.light {
+  --page-bg: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --section-bg: rgba(241, 245, 249, 0.5);
+}
+
+/* Theme: dark mode */
+.dark {
+  --page-bg: #020617;
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --section-bg: transparent;
+}
+
+/* Smooth scrolling for entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base styles - AURA design system (theme-aware) */
+body {
+  @apply font-outfit antialiased;
+  background-color: var(--page-bg);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Animated gradient text utility */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-teal-500 via-cyan-500 to-teal-500 bg-[length:200%_auto];
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+/* Glassmorphism base (theme-aware) */
+.glass {
+  background: var(--glass-bg);
+  @apply backdrop-blur-xl border;
+  border-color: var(--glass-border);
+}
+
+/* Glow border on focus for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-cyan-400;
+}
+
+/* Custom scrollbar - theme-aware teal accent */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-200 dark:bg-slate-900/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyan-500/40 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-cyan-400/60;
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  scrollbar-gutter: stable;
+}
